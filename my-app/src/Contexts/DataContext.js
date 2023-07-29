@@ -1,6 +1,8 @@
 import { createContext, useContext, useReducer } from "react";
 
 import { videos, categories } from "../Data/data";
+import { DataReducer } from "../Reducers/DataReducer";
+
 export const DataContext = createContext();
 
 export function useData() {
