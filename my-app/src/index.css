@@ -59,12 +59,12 @@ body {
 .grid-container {
     display: grid;
     height: max-content;
-    grid-template-columns: 0.8fr 2.2fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        "nav nav "
-        "aside-right aside-right "
-        "aside-left main "
-        "aside-left main ";
+        "nav"
+        "aside-right"
+        "main "
+        "aside-left";
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3rem;
