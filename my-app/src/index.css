@@ -69,7 +69,19 @@ body {
     justify-content: space-between;
     margin-bottom: 3rem;
 }
-
+.home {
+    display: grid;
+        height: max-content;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "aside-right"
+            "main "
+            "aside-left";
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+}
 .flex-center-align {
     display: flex;
     justify-content: center;
@@ -113,7 +125,21 @@ body {
         justify-content: space-between;
         margin-bottom: 3rem;
     }
-
+    .home {
+        display: grid;
+            height: max-content;
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas:
+                "nav nav"
+                "aside-left main"
+                "aside-left main"
+                "aside-left main";
+            gap: 1rem;
+            justify-items: center;
+            align-items: stretch;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+    }
     .nav--links {
         flex-direction: row;
     }

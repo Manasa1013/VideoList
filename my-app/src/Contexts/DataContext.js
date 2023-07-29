@@ -9,7 +9,7 @@ export function useData() {
   return useContext(DataContext);
 }
 
-const initialState = {
+export const initialState = {
   categories: categories,
   videos: videos,
   playlists: [],
@@ -19,7 +19,7 @@ const initialState = {
 };
 
 export function DataProvider({ children }) {
-  const { state, dispatch } = useReducer(initialState);
+  const [state, dispatch] = useReducer(DataReducer, initialState);
   return (
     <DataContext.Provider value={{ state, dispatch }}>
       {children}

@@ -1,0 +1,17 @@
+.video-cover-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+ @media screen and (min-device-width : 768px) {
+     
+
+
+     .video-cover-container {
+         margin-bottom: 1rem;
+     }
+ }
