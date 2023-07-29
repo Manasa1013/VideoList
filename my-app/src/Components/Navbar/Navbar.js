@@ -4,7 +4,7 @@ import "./Navbar.css";
 export function Navbar() {
   return (
     <>
-      <nav className="sticky nav top-0 inset-x-0 w-full flex flex-row items-center gap-6 bg-white text-blue-700 text-lg md:text-md font-medium p-4 m-0 h-16 z-5">
+      <nav className="sticky nav top-0 inset-x-0 w-full flex flex-row items-center gap-6 bg-white text-blue-700 text-lg md:text-md font-medium p-4 m-0 h-16 z-30">
         <header className="logo inline">
           <h1>VideoList</h1>
         </header>

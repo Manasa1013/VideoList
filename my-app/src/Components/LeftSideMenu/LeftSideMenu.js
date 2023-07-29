@@ -4,7 +4,7 @@ import { getActiveClassName } from "../../utils.js";
 export function LeftSideMenu() {
   return (
     <>
-      <div className="bg-blue-50 md:p-4 md:mr-12 md:mt-16 w-full md:w-auto fixed  left-0 md:top-0 bottom-0 p-0 flex md:flex-col flex-row justify-start items-center md:py-4 ">
+      <div className="bg-blue-50 md:p-4  md:mt-16 w-full md:w-auto fixed  left-0 md:top-0 bottom-0 p-0 flex md:flex-col flex-row justify-start items-center md:py-4 md:z-10 z-20">
         <ul className="flex md:flex-col flex-row font-normal md:text-md text-lg items-start justify-between w-full h-12 md:h-auto">
           <li className="md:my-6 md:mx-4">
             <NavLink

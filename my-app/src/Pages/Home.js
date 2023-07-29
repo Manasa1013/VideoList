@@ -3,7 +3,7 @@ import { LeftSideMenu } from "../Components/";
 export function Home() {
   return (
     <>
-      <div className="home">
+      <div className="two-column-container">
         <Navbar />
         <aside className="aside-left">
           <LeftSideMenu />

@@ -1,0 +1,33 @@
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(140px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-device-width : 455px) {
+
+
+
+    .video-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-device-width : 768px) {
+
+
+
+    .video-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+}

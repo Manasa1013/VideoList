@@ -69,7 +69,7 @@ body {
     justify-content: space-between;
     margin-bottom: 3rem;
 }
-.home {
+.two-column-container {
     display: grid;
         height: max-content;
         grid-template-columns: 1fr;
@@ -125,7 +125,7 @@ body {
         justify-content: space-between;
         margin-bottom: 3rem;
     }
-    .home {
+    .two-column-container {
         display: grid;
             height: max-content;
             grid-template-columns: 1fr 3fr;
