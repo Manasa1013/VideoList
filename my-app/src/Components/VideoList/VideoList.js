@@ -7,15 +7,13 @@ export function VideoList() {
   } = useData();
   return (
     <>
-      <section className="">
-        <ul className="list-none p-0 m-0 video-container">
-          {filteredVideos?.map((video) => (
-            <li className="" key={video?.id}>
-              <VideoCard video={video} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      <ul className="list-none p-0 m-0 video-container">
+        {filteredVideos?.map((video) => (
+          <li className="" key={video?.id}>
+            <VideoCard video={video} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
