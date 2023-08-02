@@ -1,10 +1,11 @@
 import { useData } from "../../Contexts/DataContext";
 import { VideoCard } from "../VideoCard/VideoCard";
 import "./VideoList.css";
-export function VideoList() {
+export function VideoList({ category }) {
   const {
     state: { filteredVideos },
   } = useData();
+
   return (
     <>
       <ul className="list-none p-0 m-0 video-container">

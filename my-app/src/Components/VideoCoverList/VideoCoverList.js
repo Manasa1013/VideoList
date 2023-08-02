@@ -18,9 +18,10 @@ export function VideoCoverList() {
 }
 
 export function VideoCoverCard({ videocover }) {
+  const { dispatch } = useData();
   return (
     <div>
-      <Link to={`/${videocover?.category}`}>
+      <Link to={`/explore/${videocover?.category}`}>
         <div className="flex flex-column p-4 rounded-md border-gray-100 aspect-square w-56 h-48">
           <img
             src={videocover?.thumbnail}

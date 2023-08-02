@@ -5,10 +5,11 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App outline-blue-400">
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/explore" element={<Explore />}></Route>
+        <Route path="/explore/:category" element={<Explore />}></Route>
         <Route path="/watchlater" element={<WatchLater />}></Route>
         <Route path="/playlists" element={<Playlists />}></Route>
         <Route path={`/videos/:videoId`} element={<SingleVideoPage />}></Route>

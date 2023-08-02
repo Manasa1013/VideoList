@@ -10,3 +10,8 @@ export function getTrimmed(sentence, n) {
   let sentenceArr = sentence.split(" ");
   return sentenceArr.slice(0, n + 1).join(" ");
 }
+
+export const SET_VIDEOS = "SET_VIDEOS";
+export const SET_CATEGORY = "SET_CATEGORY";
+export const SET_SEARCH_TEXT = "SET_SEARCH_TEXT";
+export const SEARCH_FILTER = "SEARCH_FILTER";
