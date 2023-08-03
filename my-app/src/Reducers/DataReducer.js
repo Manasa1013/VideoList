@@ -3,6 +3,8 @@ import {
   SET_SEARCH_TEXT,
   SET_VIDEOS,
   SEARCH_FILTER,
+  ADD_TO_WATCHLATER,
+  REMOVE_FROM_WATCHLATER,
 } from "../utils";
 
 export function DataReducer(state, action) {
@@ -10,18 +12,27 @@ export function DataReducer(state, action) {
     case SET_VIDEOS:
       return state;
     case SET_CATEGORY:
-      console.log({
-        ...state,
-        filteredVideos: state?.videos?.filter(
-          (video) => video?.category === action.payload
-        ),
-      });
       return {
         ...state,
         filteredVideos: state?.videos?.filter(
           (video) => video?.category === action.payload
         ),
       };
+    case ADD_TO_WATCHLATER: {
+      return {
+        ...state,
+        watchLater: [action.payload, ...state.watchLater],
+      };
+    }
+    case REMOVE_FROM_WATCHLATER: {
+      const filteredWatchLaterList = state?.watchLater?.filter(
+        (videoItem) => videoItem._id !== action.payload._id
+      );
+      return {
+        ...state,
+        watchLater: filteredWatchLaterList,
+      };
+    }
     case SET_SEARCH_TEXT:
       return { ...state, searchText: action.payload };
     case SEARCH_FILTER:

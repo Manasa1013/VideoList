@@ -1,20 +1,72 @@
 import { Link } from "react-router-dom";
 
 import { useData } from "../../Contexts/DataContext";
-import { getTrimmed } from "../../utils";
+import {
+  getTrimmed,
+  ADD_TO_WATCHLATER,
+  REMOVE_FROM_WATCHLATER,
+} from "../../utils";
 
 export function VideoCard({ video }) {
   const {
-    state: { categories },
+    state: { categories, watchLater },
+    dispatch,
   } = useData();
+
+  const addWatchLaterIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-6 h-6 inline"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+  );
+  const removeWatchLaterIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6"
+    >
+      <path
+        fillRule="evenodd"
+        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+  const isExistingInWatchLater = (id) =>
+    watchLater?.find((watchLaterVideo) => watchLaterVideo._id === id);
   const getCategoryImage = categories?.find(
     (category) => category.category === video?.category
   )?.thumbnail;
   return (
     <>
-      <div className="relative p-4 flex flex-col gap-1 ">
+      <div className="p-4 flex flex-col gap-1 relative">
+        <div className="absolute top-4 right-4 p-2 text-blue-400 bg-gray-50 rounded-bl-2xl">
+          <button
+            className="p-0 m-0 border-none outline-none"
+            onClick={() => {
+              if (isExistingInWatchLater(video?._id))
+                dispatch({ type: REMOVE_FROM_WATCHLATER, payload: video });
+              else dispatch({ type: ADD_TO_WATCHLATER, payload: video });
+            }}
+          >
+            {isExistingInWatchLater(video?._id)
+              ? removeWatchLaterIcon
+              : addWatchLaterIcon}
+          </button>
+        </div>
         <Link to={`/${video?._id}`} className="">
-          <div className="flex flex-col rounded-md border-gray-100 aspect-square w-56 h-44 max-w-full max-h-full ">
+          <div className="flex flex-col  rounded-md border-gray-100 aspect-square w-56 h-44 max-w-full max-h-full ">
             {/* <iframe
               width="250"
               height="200"
@@ -23,6 +75,7 @@ export function VideoCard({ video }) {
               allowFullScreen
               title={video?.title}
             /> */}
+
             <img
               src={video?.thumbnail}
               alt={video?.title}
