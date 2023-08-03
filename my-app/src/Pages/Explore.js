@@ -22,7 +22,9 @@ export function Explore() {
         </aside>
         <main className="main flex flex-col gap-4">
           <h1 className="text-2xl font-bold text-blue-700">Explore</h1>
-          {!category && <SearchBar />}
+
+          <div className="md:ml-8">{!category && <SearchBar />}</div>
+
           <div className="md:ml-8">
             <VideoList
               videos={filteredVideos}

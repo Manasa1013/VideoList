@@ -6,6 +6,7 @@ import {
 } from "./VideoCoverList/VideoCoverList";
 import { VideoList } from "./VideoList/VideoList";
 import { VideoCard } from "./VideoCard/VideoCard";
+import { SingleVideoCard } from "./SingleVideoCard/SingleVideoCard";
 import { AddPlaylistModal } from "./AddPlaylistModal/AddPlaylistModal";
 import { SearchBar } from "./SearchBar/SearchBar";
 export {
@@ -15,6 +16,7 @@ export {
   VideoCoverList,
   VideoList,
   VideoCard,
+  SingleVideoCard,
   AddPlaylistModal,
   SearchBar,
 };

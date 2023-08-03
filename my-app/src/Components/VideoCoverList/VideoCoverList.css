@@ -1,13 +1,19 @@
 .video-cover-container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(1, minmax(140px, 1fr));
     gap: 1rem;
     justify-items: center;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 3rem;
+    margin-bottom: 3rem; */
+
+    display: flex;
+    flex-flow : row wrap;
+    align-items: center;
+    justify-items: center;
+    gap : 1rem;
 }
-@media screen and (min-device-width : 455px) {
+/* @media screen and (min-device-width : 455px) {
 
 
 
@@ -28,4 +34,4 @@
             gap : 1rem;
          margin-bottom: 1rem;
      }
- }
+ } */

@@ -7,7 +7,7 @@ export function WatchLater() {
   } = useData();
   return (
     <>
-      <div className="grid-container">
+      <div className="two-column-container">
         <Navbar />
         <aside className="aside-left">
           <LeftSideMenu />

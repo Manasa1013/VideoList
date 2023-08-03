@@ -7,7 +7,7 @@ export function SearchBar() {
     dispatch,
   } = useData();
   return (
-    <div className="flex flex-row  rounded-md bg-blue-100/50 hover:bg-white border-blue-500">
+    <div className="flex flex-row w-11/12 mx-2 my-1 rounded-md bg-blue-100/50 hover:bg-white border-blue-500">
       <input
         type="search"
         placeholder="Search for titles,tags and categories"
@@ -24,10 +24,10 @@ export function SearchBar() {
           });
         }}
         value={searchText}
-        className="px-2 py-3  md:w-full md:max-w-3/4 text-blue-700 "
+        className="px-2 py-3 text-blue-700 w-9/12 rounded-l-md outline-blue-400"
       />
       <button
-        className="px-2 py-3  text-blue-700 "
+        className="px-2 py-3  text-blue-700 text-sm md:text-md rounded-r-md w-3/12 text-center outline-blue-400"
         onClick={() => {
           dispatch({ type: SEARCH_FILTER, payload: searchText });
         }}

@@ -37,7 +37,7 @@ export function VideoCard({ video }) {
               : addWatchLaterIcon}
           </button>
         </div>
-        <Link to={`/${video?._id}`} className="">
+        <Link to={`/videos/${video?._id}`} className="">
           <div className="flex flex-col  rounded-md border-gray-100 aspect-square w-56 h-44 max-w-full max-h-full ">
             {/* <iframe
               width="250"
