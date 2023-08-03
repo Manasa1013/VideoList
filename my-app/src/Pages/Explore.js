@@ -12,7 +12,7 @@ export function Explore() {
   useEffect(() => {
     if (category) dispatch({ type: SET_CATEGORY, payload: category });
     else dispatch({ type: SET_VIDEOS });
-  }, [category]);
+  }, [category, dispatch]);
   return (
     <>
       <div className="two-column-container">

@@ -18,7 +18,6 @@ export function VideoCoverList() {
 }
 
 export function VideoCoverCard({ videocover }) {
-  const { dispatch } = useData();
   return (
     <div>
       <Link to={`/explore/${videocover?.category}`}>
