@@ -5,6 +5,8 @@ import {
   SEARCH_FILTER,
   ADD_TO_WATCHLATER,
   REMOVE_FROM_WATCHLATER,
+  ADD_PLAYLIST,
+  REMOVE_PLAYLIST,
 } from "../utils";
 
 export function DataReducer(state, action) {
@@ -31,6 +33,24 @@ export function DataReducer(state, action) {
       return {
         ...state,
         watchLater: filteredWatchLaterList,
+      };
+    }
+    case ADD_PLAYLIST: {
+      const isExistingPlaylist = state?.playlists
+        ?.map((playListItem) => playListItem.name)
+        ?.includes(action.payload.name);
+
+      return isExistingPlaylist
+        ? { ...state }
+        : { ...state, playlists: [action.payload, ...state.playlists] };
+    }
+    case REMOVE_PLAYLIST: {
+      const filteredPlaylist = state?.playlists?.filter(
+        (playlist) => playlist.name !== action.payload.name
+      );
+      return {
+        ...state,
+        playlists: filteredPlaylist,
       };
     }
     case SET_SEARCH_TEXT:
